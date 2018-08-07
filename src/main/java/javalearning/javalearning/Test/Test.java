@@ -9,6 +9,6 @@ package javalearning.javalearning.Test;
  */
 public class Test {
     public static void main(String[] args) {
-        System.out.println("214");
+        System.out.println("hello Mr.Zhou!");
     }
 }

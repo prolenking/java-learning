@@ -22,14 +22,19 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `shop_book`;
 CREATE TABLE `shop_book` (
-  `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `author` varchar(10) DEFAULT NULL,
   `isbn` varchar(255) DEFAULT NULL,
   `place_of_publication` varchar(255) DEFAULT NULL,
   `publication_date` datetime DEFAULT NULL,
   `press` varchar(255) DEFAULT NULL,
+  `libId` bigint(20) DEFAULT NULL,
+  `createTime` datetime DEFAULT NULL,
+  `createBy` bigint(20) DEFAULT NULL,
+  `updateTime` datetime DEFAULT NULL,
+  `updateBy` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 SET FOREIGN_KEY_CHECKS = 1;

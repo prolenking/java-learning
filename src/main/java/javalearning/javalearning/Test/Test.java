@@ -17,7 +17,9 @@ import java.util.ResourceBundle;
  * @Author: liz
  * @Date: 2018/8/7
  * @Time: 14:56
- */
+ *
+ * 此类仅用于测试项目能够正常运行，如需测试项目内容能够正常运行，请进入test.javalearning.javalearning创建测试类。
+ * */
 
 public class Test {
 

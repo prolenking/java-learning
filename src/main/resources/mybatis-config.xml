@@ -22,7 +22,6 @@
 
     <mappers>
         <mapper resource="mapper/BookMapper"/>
-        <!--<mapper class="javalearning.javalearning.mapper.BookMapper"/>-->
     </mappers>
 
 </configuration>

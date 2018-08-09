@@ -2,6 +2,8 @@ package javalearning.javalearning.common.base;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Date;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -15,4 +17,31 @@ public class BaseServiceImpl<M> implements BaseService{
 //    @Autowired
 //    protected M baseMapper;
 
+
+    @Override
+    public void addInsertCommonField(BaseEntity baseEntity,Long userId) {
+        Date date = new Date();
+        baseEntity.setCreateBy(userId);
+        baseEntity.setCreateTime(date);
+        baseEntity.setLibId(userId);
+        baseEntity.setUpdateBy(userId);
+        baseEntity.setUpdateTime(date);
+    }
+
+    @Override
+    public void addUpdateCommonField(BaseEntity baseEntity,Long userId) {
+        Date date = new Date();
+        baseEntity.setLibId(userId);
+        baseEntity.setUpdateBy(userId);
+        baseEntity.setUpdateTime(date);
+    }
+
+    @Override
+    public void addDeleteCommonField(BaseEntity baseEntity,Long userId) {
+        Date date = new Date();
+        baseEntity.setDeleted(true);
+        baseEntity.setLibId(userId);
+        baseEntity.setUpdateBy(userId);
+        baseEntity.setUpdateTime(date);
+    }
 }

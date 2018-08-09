@@ -8,5 +8,7 @@ package javalearning.javalearning.common.base;
  * @Time: 10:41
  */
 public interface BaseService {
-
+    void addInsertCommonField(BaseEntity baseEntity,Long userId);
+    void addUpdateCommonField(BaseEntity baseEntity,Long userId);
+    void addDeleteCommonField(BaseEntity baseEntity,Long userId);
 }

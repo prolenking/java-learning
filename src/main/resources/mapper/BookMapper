@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="javalearning.javalearning.mapper.BookMapper">
-    <resultMap id="book" type="javalearning.javalearning.entity.ShopBook">
+    <resultMap id="book" type="javalearning.javalearning.entity.LibBook">
         <id column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="author" property="author"/>
@@ -9,9 +9,26 @@
         <result column="place_of_publication" property="placeOfPublication"/>
         <result column="publication_date" property="publicationDate"/>
         <result column="press" property="press"/>
+        <result column="libId" property="libId"/>
+        <result column="createTime" property="createTime"/>
+        <result column="createBy" property="createBy"/>
+        <result column="updateTime" property="updateTime"/>
+        <result column="updateBy" property="updateBy"/>
     </resultMap>
     <select id="selectBookById" parameterType="java.lang.Long" resultMap="book">
-        select * from shop_book where id = #{id}
+        select * from lib_Book where id = #{id}
+    </select>
+    <select id="query" resultType="javalearning.javalearning.pojo.vo.lib.book.LibBookVO">
+        select `name`,`author`
+        from lib_Book
+        <where>
+            <if test="keywords != null">
+                `name` like concat('%',#{keywords},'%')
+                or `author` like concat('%',#{keywords},'%')
+                or `isbn` like concat('%',#{keywords},'%')
+                or `press` like concat('%',#{keywords},'%')
+            </if>
+        </where>
     </select>
 
 </mapper>

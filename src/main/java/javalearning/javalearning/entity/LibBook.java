@@ -1,5 +1,7 @@
 package javalearning.javalearning.entity;
 
+import javalearning.javalearning.common.base.BaseEntity;
+
 import java.util.Date;
 
 /**
@@ -9,11 +11,13 @@ import java.util.Date;
  * @Date: 2018/8/7
  * @Time: 16:43
  */
-public class ShopBook {
+public class LibBook extends BaseEntity {
+
     /**
      * id
      */
     private Long id;
+
     /**
      * 书籍名称
      */
@@ -102,14 +106,14 @@ public class ShopBook {
 
     @Override
     public String toString() {
-        return "ShopBook{" +
+        return "LibBook{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", author='" + author + '\'' +
                 ", isbn='" + isbn + '\'' +
                 ", placeOfPublication='" + placeOfPublication + '\'' +
                 ", publicationDate=" + publicationDate +
-                ", press='" + press + '\'' +
+                ", press='" + press + '\'' +super.toString()+
                 '}';
     }
 }

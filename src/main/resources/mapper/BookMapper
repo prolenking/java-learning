@@ -10,25 +10,35 @@
         <result column="publication_date" property="publicationDate"/>
         <result column="press" property="press"/>
         <result column="libId" property="libId"/>
+        <result column="deleted" property="deleted"/>
         <result column="createTime" property="createTime"/>
         <result column="createBy" property="createBy"/>
         <result column="updateTime" property="updateTime"/>
         <result column="updateBy" property="updateBy"/>
     </resultMap>
+
+    <insert id="add">
+        insert into lib_Book(`name`,`author`,`isbn`,`place_of_publication`,`publication_date`,`press`,`libId`,
+        `createTime`,`createBy`,`updateTime`,`updateBy`)
+        values (concat(#{BIVO.name}),#{BIVO.author},#{BIVO.isbn},#{BIVO.placeOfPublication},#{BIVO.publicationDate},#{BIVO.press},#{libId},#{BIVO.createTime},#{BIVO.createBy},
+        #{BIVO.updateTime},#{BIVO.updateBy})
+    </insert>
+
     <select id="selectBookById" parameterType="java.lang.Long" resultMap="book">
         select * from lib_Book where id = #{id}
     </select>
+
     <select id="query" resultType="javalearning.javalearning.pojo.vo.lib.book.LibBookVO">
-        select `name`,`author`
+        select id,`name`,`author`
         from lib_Book
-        <where>
-            <if test="keywords != null">
-                `name` like concat('%',#{keywords},'%')
-                or `author` like concat('%',#{keywords},'%')
-                or `isbn` like concat('%',#{keywords},'%')
-                or `press` like concat('%',#{keywords},'%')
+        where libId = #{libId}
+            <if test="LBQVO.keywords != null">
+                and(`name` like concat('%',#{LBQVO.keywords},'%')
+                or `author` like concat('%',#{LBQVO.keywords},'%')
+                or `isbn` like concat('%',#{LBQVO.keywords},'%')
+                or `press` like concat('%',#{LBQVO.keywords},'%'))
             </if>
-        </where>
+
     </select>
 
 </mapper>

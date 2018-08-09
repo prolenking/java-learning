@@ -1,13 +1,12 @@
 package javalearning.javalearning.controller;
 
+import javalearning.javalearning.pojo.vo.lib.book.BookInsertVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookQueryVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookVO;
 import javalearning.javalearning.service.LibBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,7 +24,12 @@ public class LibBookController {
 
     @GetMapping("/query")
     public LibBookVO query(@Validated LibBookQueryVO libBookQueryVO){
-        return libBookService.query(libBookQueryVO);
+        return libBookService.query(libBookQueryVO,1L);
+    }
+
+    @PostMapping("/add")
+    public Boolean add(@Validated @RequestBody BookInsertVO bookInsertVO){
+        return libBookService.add(bookInsertVO,bookInsertVO.getLibId());
     }
 
 }

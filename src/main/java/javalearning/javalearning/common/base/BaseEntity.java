@@ -32,6 +32,10 @@ public class BaseEntity implements Serializable {
      * 图书馆id
      */
     private Long libId;
+    /**
+     * 是否被删除
+     */
+    private Boolean deleted;
 
 
     public Date getCreateTime() {
@@ -74,12 +78,23 @@ public class BaseEntity implements Serializable {
         this.libId = libId;
     }
 
+    public Boolean getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+
     @Override
     public String toString() {
-        return  ", libId=" + libId+
-                ",createTime=" + createTime +
+        return "BaseEntity{" +
+                "createTime=" + createTime +
                 ", createBy=" + createBy +
                 ", updateTime=" + updateTime +
-                ", updateBy=" + updateBy;
+                ", updateBy=" + updateBy +
+                ", libId=" + libId +
+                ", deleted=" + deleted +
+                '}';
     }
 }

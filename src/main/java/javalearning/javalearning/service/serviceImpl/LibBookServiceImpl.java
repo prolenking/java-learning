@@ -5,7 +5,13 @@ import javalearning.javalearning.mapper.BookMapper;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookQueryVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookVO;
 import javalearning.javalearning.service.LibBookService;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Service;
+
+import java.io.InputStream;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,6 +27,15 @@ public class LibBookServiceImpl extends BaseServiceImpl<BookMapper> implements L
 
     @Override
     public LibBookVO query(LibBookQueryVO libBookQueryVO) {
-        return this.baseMapper.query(libBookQueryVO);
+        try {
+            InputStream in = Resources.getResourceAsStream("mybatis-config.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(in);
+            SqlSession session = sqlSessionFactory.openSession();
+            BookMapper bookMapper = session.getMapper(BookMapper.class);
+            return bookMapper.query(libBookQueryVO);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }

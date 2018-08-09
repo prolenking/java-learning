@@ -1,5 +1,7 @@
 package javalearning.javalearning.pojo.vo.lib;
 
+import org.hibernate.validator.constraints.Length;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -8,6 +10,7 @@ package javalearning.javalearning.pojo.vo.lib;
  * @Time: 10:06
  */
 public class FuzzyQueryVO {
+    @Length(min=1,max = 30,message = "length 1-30!")
     private String keywords;
 
     public String getKeywords() {

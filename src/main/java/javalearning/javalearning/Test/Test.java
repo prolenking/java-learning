@@ -1,6 +1,6 @@
 package javalearning.javalearning.Test;
 
-import javalearning.javalearning.entity.ShopBook;
+import javalearning.javalearning.entity.LibBook;
 import javalearning.javalearning.mapper.BookMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -9,7 +9,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ResourceBundle;
 
 /**
  * Created with IntelliJ IDEA.
@@ -33,8 +32,8 @@ public class Test {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(in);
         SqlSession session =sqlSessionFactory.openSession();
         BookMapper mapper=session.getMapper(BookMapper.class);
-        ShopBook shopBook = mapper.selectBookById(14L);
-        System.out.println(shopBook);
+        LibBook libBook = mapper.selectBookById(14L);
+        System.out.println(libBook);
     }
 
 }

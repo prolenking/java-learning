@@ -11,7 +11,7 @@
  Target Server Version : 50722
  File Encoding         : 65001
 
- Date: 08/08/2018 15:07:54
+ Date: 09/08/2018 12:39:35
 */
 
 SET NAMES utf8mb4;
@@ -35,14 +35,16 @@ CREATE TABLE `lib_Book` (
   `updateTime` datetime DEFAULT NULL,
   `updateBy` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Table structure for lib_Member
 -- ----------------------------
 DROP TABLE IF EXISTS `lib_Member`;
 CREATE TABLE `lib_Member` (
-  `name` varchar(255) DEFAULT NULL
+  `name` varchar(255) NOT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * M是mapper，以后我看懂前辈的思路了会有功能性的方法填充进去
  */
 public class BaseServiceImpl<M> implements BaseService{
-    @Autowired
-    protected M baseMapper;
+//    @Autowired
+//    protected M baseMapper;
 
 }

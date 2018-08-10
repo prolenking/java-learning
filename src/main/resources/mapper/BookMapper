@@ -32,13 +32,12 @@
         select id,`name`,`author`
         from lib_Book
         where libId = #{libId}
-            <if test="LBQVO.keywords != null">
-                and(`name` like concat('%',#{LBQVO.keywords},'%')
-                or `author` like concat('%',#{LBQVO.keywords},'%')
-                or `isbn` like concat('%',#{LBQVO.keywords},'%')
-                or `press` like concat('%',#{LBQVO.keywords},'%'))
-            </if>
-
+        <if test="LBQVO.keywords != null">
+            and(`name` like concat('%',#{LBQVO.keywords},'%')
+            or `author` like concat('%',#{LBQVO.keywords},'%')
+            or `isbn` like concat('%',#{LBQVO.keywords},'%')
+            or `press` like concat('%',#{LBQVO.keywords},'%'))
+        </if>
     </select>
 
 </mapper>

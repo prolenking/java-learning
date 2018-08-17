@@ -108,12 +108,12 @@ public class LibBook extends BaseEntity {
     public String toString() {
         return "LibBook{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", author='" + author + '\'' +
-                ", isbn='" + isbn + '\'' +
-                ", placeOfPublication='" + placeOfPublication + '\'' +
-                ", publicationDate=" + publicationDate +
-                ", press='" + press + '\'' +super.toString()+
+                ", \nname='" + name + '\'' +
+                ", \nauthor='" + author + '\'' +
+                ", \nisbn='" + isbn + '\'' +
+                ", \nplaceOfPublication='" + placeOfPublication + '\'' +
+                ", \npublicationDate=" + publicationDate +
+                ", \npress='" + press + '\'' +super.toString()+
                 '}';
     }
 }

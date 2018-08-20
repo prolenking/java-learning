@@ -11,7 +11,7 @@
         <environment id="develop">
             <transactionManager type="JDBC"></transactionManager>
             <dataSource type="POOLED">
-                <property name="driver" value="${driver}"/>
+                <property name="driver" value="${spring.datasource.driver-class-name}"/>
                 <property name="url" value="${spring.datasource.url}"/>
                 <property name="username" value="${spring.datasource.username}"/>
                 <property name="password" value="${spring.datasource.password}"/>

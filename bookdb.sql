@@ -18,10 +18,10 @@ SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for lib_Book
+-- Table structure for lib_book
 -- ----------------------------
-DROP TABLE IF EXISTS `lib_Book`;
-CREATE TABLE `lib_Book` (
+DROP TABLE IF EXISTS `lib_book`;
+CREATE TABLE `lib_book` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `author` varchar(10) DEFAULT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE `lib_Book` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
--- Table structure for lib_Member
+-- Table structure for lib_member
 -- ----------------------------
-DROP TABLE IF EXISTS `lib_Member`;
-CREATE TABLE `lib_Member` (
+DROP TABLE IF EXISTS `lib_member`;
+CREATE TABLE `lib_member` (
   `name` varchar(255) NOT NULL,
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`) USING BTREE

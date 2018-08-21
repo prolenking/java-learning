@@ -1,8 +1,8 @@
 package javalearning.javalearning.service;
 
-import javalearning.javalearning.pojo.vo.lib.book.BookInsertVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookQueryVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookVO;
+import javalearning.javalearning.pojo.vo.lib.book.BookInsertVO;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,6 +12,7 @@ import javalearning.javalearning.pojo.vo.lib.book.LibBookVO;
  * @Time: 18:12
  */
 public interface LibBookService {
-    LibBookVO query(LibBookQueryVO libBookQueryVO,Long userId);
+    LibBookVO query(LibBookQueryVO libBookQueryVO, Long userId);
     Boolean add(BookInsertVO bookInsertVO, Long userId);
+
 }

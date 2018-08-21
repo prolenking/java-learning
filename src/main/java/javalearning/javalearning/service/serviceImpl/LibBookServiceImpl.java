@@ -6,13 +6,8 @@ import javalearning.javalearning.pojo.vo.lib.book.BookInsertVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookQueryVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookVO;
 import javalearning.javalearning.service.LibBookService;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.io.InputStream;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,39 +18,23 @@ import java.io.InputStream;
  */
 @Service
 public class LibBookServiceImpl extends BaseServiceImpl<BookMapper> implements LibBookService {
+    @Autowired
+    private BookMapper bookMapper;
 
 
 
     @Override
     public LibBookVO query(LibBookQueryVO libBookQueryVO, Long userId) {
-        try {
-            InputStream in = Resources.getResourceAsStream("mybatis-config.xml");
-            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(in);
-            SqlSession session = sqlSessionFactory.openSession();
-            BookMapper bookMapper = session.getMapper(BookMapper.class);
-            return bookMapper.query(libBookQueryVO, userId);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return null;
+        return bookMapper.query(libBookQueryVO, userId);
     }
 
     @Override
     public Boolean add(BookInsertVO bookInsertVO, Long userId) {
-        try{
-            InputStream in = Resources.getResourceAsStream("mybatis-config.xml");
-            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(in);
-            SqlSession session = sqlSessionFactory.openSession();
-            BookMapper bookMapper = session.getMapper(BookMapper.class);
-            this.addInsertCommonField(bookInsertVO,userId);
-            bookMapper.add(bookInsertVO,userId);
-            session.commit();
-            session.close();
-        }catch (Exception e){
-            e.printStackTrace();
-            return false;
-        }
+        this.addInsertCommonField(bookInsertVO, userId);
+        bookMapper.add(bookInsertVO, userId);
         return true;
     }
+
+
 }
 

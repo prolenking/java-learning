@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
  */
 public class BookInsertVO extends LibBook {
 
-//    @NotNull(message = "libId can't be null!")
+    @NotNull(message = "libId can't be null!")
     private Long libId;
 
     @Override

@@ -1,9 +1,9 @@
 package javalearning.javalearning.mapper;
 
 import javalearning.javalearning.entity.LibBook;
-import javalearning.javalearning.pojo.vo.lib.book.BookInsertVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookQueryVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookVO;
+import javalearning.javalearning.pojo.vo.lib.book.BookInsertVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public interface BookMapper {
     LibBook selectBookById(@Param("id") Long id);
-    LibBookVO query(@Param("LBQVO") LibBookQueryVO libBookQueryVO,@Param("libId") Long libId);
+    LibBookVO query(@Param("LBQVO") LibBookQueryVO libBookQueryVO, @Param("libId") Long libId);
     void add(@Param("BIVO") BookInsertVO bookInsertVO,@Param("libId") Long libId);
+    LibBook se();
 }

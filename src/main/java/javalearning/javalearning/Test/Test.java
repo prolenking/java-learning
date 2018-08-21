@@ -2,13 +2,9 @@ package javalearning.javalearning.Test;
 
 import javalearning.javalearning.mapper.BookMapper;
 import javalearning.javalearning.pojo.vo.lib.book.BookInsertVO;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Date;
 
 /**
@@ -22,26 +18,15 @@ import java.util.Date;
  * */
 
 public class Test {
-
-
+    @Autowired
+    private BookMapper bookMapper;
 
     public static void main(String[] args) throws IOException {
         System.out.println("hello，welcome to our Testing project, Mr.Zhou!");
         System.out.println(new Date());
         System.out.println();
 
-
-        InputStream in= Resources.getResourceAsStream("mybatis-config.xml");
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(in);
-        SqlSession session =sqlSessionFactory.openSession();
-        BookMapper mapper=session.getMapper(BookMapper.class);
-
         BookInsertVO bookInsertVO = new BookInsertVO();
         bookInsertVO.setName("HarryPotter");
-
-        mapper.add(bookInsertVO,1L);
-        session.commit();
-        session.close();
     }
-
 }

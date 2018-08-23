@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -22,12 +24,12 @@ public class LibMemberController {
     private LibMemberService service;
 
     @GetMapping("/query")
-    public LibMemberVO query(@Validated LibMemberQueryVO libMemberQueryVO) {
+    public List<LibMemberVO> query(@Validated LibMemberQueryVO libMemberQueryVO) {
         return service.query(libMemberQueryVO, 1L);
     }
 
     @PostMapping("/add")
-    public Boolean add(@Validated @RequestBody MemberInsertVO vo) {
+    public Integer add(@Validated @RequestBody MemberInsertVO vo) {
         return service.add(vo, vo.getLibId());
     }
 

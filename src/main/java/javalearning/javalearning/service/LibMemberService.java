@@ -4,6 +4,8 @@ import javalearning.javalearning.pojo.vo.lib.member.LibMemberQueryVO;
 import javalearning.javalearning.pojo.vo.lib.member.LibMemberVO;
 import javalearning.javalearning.pojo.vo.lib.member.MemberInsertVO;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -20,7 +22,7 @@ public interface LibMemberService {
      * @param libId
      * @return
      */
-    Boolean add(MemberInsertVO memberInsertVO, Long libId);
+    Integer add(MemberInsertVO memberInsertVO, Long libId);
 
     /**
      * 模糊查询
@@ -29,7 +31,7 @@ public interface LibMemberService {
      * @param libId
      * @return
      */
-    LibMemberVO query(LibMemberQueryVO libMemberQueryVO, Long libId);
+    List<LibMemberVO> query(LibMemberQueryVO libMemberQueryVO, Long libId);
 
     /**
      * 修改用户信息方法

@@ -1,11 +1,12 @@
 package javalearning.javalearning.mapper;
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 import javalearning.javalearning.entity.LibMember;
 import javalearning.javalearning.pojo.vo.lib.member.LibMemberQueryVO;
 import javalearning.javalearning.pojo.vo.lib.member.LibMemberVO;
-import javalearning.javalearning.pojo.vo.lib.member.MemberInsertVO;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,15 +15,7 @@ import org.apache.ibatis.annotations.Param;
  * @Date: 2018/8/21
  * @Time: 10:03
  */
-@Mapper
-public interface MemberMapper {
-    /**
-     * 插入新用户
-     *
-     * @param mvo
-     * @param libId
-     */
-    void add(@Param("MIVO") MemberInsertVO mvo, @Param("libId") Long libId);
+public interface MemberMapper extends BaseMapper<LibMember> {
 
     /**
      * 通过用户id查询用户信息
@@ -39,7 +32,7 @@ public interface MemberMapper {
      * @param id
      * @return
      */
-    LibMemberVO query(@Param("LMQVO") LibMemberQueryVO libMemberQueryVO, @Param("libId") Long id);
+    List<LibMemberVO> query(@Param("LMQVO") LibMemberQueryVO libMemberQueryVO, @Param("libId") Long id);
 
     /**
      * 修改用户信息

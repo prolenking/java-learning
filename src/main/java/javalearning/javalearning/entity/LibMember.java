@@ -1,5 +1,6 @@
 package javalearning.javalearning.entity;
 
+import com.baomidou.mybatisplus.annotations.TableField;
 import javalearning.javalearning.common.base.BaseEntity;
 
 /**
@@ -10,30 +11,33 @@ import javalearning.javalearning.common.base.BaseEntity;
  * @Time: 10:03
  */
 public class LibMember extends BaseEntity {
-    private Long id;
     private String name;
+    @TableField("phoneNumber")
     private String phoneNumber;
     /**
      * 证件号
      */
+    @TableField("identificationNumber")
     private String identificationNumber;
     /**
      * 已借走书的数量
      */
+    @TableField("bookNumber")
     private Integer bookNumber;
     /**
      * 借阅次数
      */
+    @TableField("borrowTimes")
     private Integer borrowTimes;
 
     @Override
     public Long getId() {
-        return id;
+        return super.getId();
     }
 
     @Override
     public void setId(Long id) {
-        this.id = id;
+        super.setId(id);
     }
 
     public String getName() {
@@ -79,7 +83,7 @@ public class LibMember extends BaseEntity {
     @Override
     public String toString() {
         return "LibMember{" +
-                "id=" + id +
+                "id=" + super.getId() +
                 ", name='" + name + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", identificationNumber='" + identificationNumber + '\'' +

@@ -8,6 +8,8 @@ import javalearning.javalearning.pojo.vo.lib.member.MemberInsertVO;
 import javalearning.javalearning.service.LibMemberService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -19,14 +21,14 @@ import org.springframework.stereotype.Service;
 public class LibMemberServiceImpl extends BaseServiceImpl<MemberMapper> implements LibMemberService {
 
     @Override
-    public Boolean add(MemberInsertVO memberInsertVO, Long libId) {
+    public Integer add(MemberInsertVO memberInsertVO, Long libId) {
         this.addInsertCommonField(memberInsertVO, libId);
-        this.baseMapper.add(memberInsertVO, libId);
-        return true;
+        memberInsertVO.setLibId(libId);
+        return super.baseMapper.insert(memberInsertVO);
     }
 
     @Override
-    public LibMemberVO query(LibMemberQueryVO libMemberQueryVO, Long libId) {
+    public List<LibMemberVO> query(LibMemberQueryVO libMemberQueryVO, Long libId) {
         return this.baseMapper.query(libMemberQueryVO, libId);
     }
 

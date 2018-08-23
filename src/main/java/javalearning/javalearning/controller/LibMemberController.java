@@ -35,4 +35,9 @@ public class LibMemberController {
     public Boolean update(@Validated @RequestBody LibMemberVO libMemberVO) {
         return service.update(libMemberVO);
     }
+
+    @GetMapping("/delete")
+    public Boolean delete(@Validated Long id) {
+        return service.delete(id);
+    }
 }

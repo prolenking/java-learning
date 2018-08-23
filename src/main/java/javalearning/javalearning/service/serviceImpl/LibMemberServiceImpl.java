@@ -35,4 +35,10 @@ public class LibMemberServiceImpl extends BaseServiceImpl<MemberMapper> implemen
         this.baseMapper.update(libMemberVO);
         return true;
     }
+
+    @Override
+    public Boolean delete(Long id) {
+        this.baseMapper.logicDelete(id);
+        return true;
+    }
 }

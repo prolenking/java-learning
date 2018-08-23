@@ -47,4 +47,11 @@ public interface MemberMapper {
      * @param libMemberVO
      */
     void update(@Param("LMVO") LibMemberVO libMemberVO);
+
+    /**
+     * 逻辑删除用户:将deleted字段设置为true，不删除记录
+     *
+     * @param id
+     */
+    void logicDelete(@Param("id") Long id);
 }

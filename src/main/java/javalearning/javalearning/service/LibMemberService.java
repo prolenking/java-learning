@@ -38,4 +38,12 @@ public interface LibMemberService {
      * @return
      */
     Boolean update(LibMemberVO libMemberVO);
+
+    /**
+     * 逻辑删除用户
+     *
+     * @param id
+     * @return
+     */
+    Boolean delete(Long id);
 }

@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface MemberMapper {
-    void insert(@Param("MIVO") MemberInsertVO mvo, @Param("libId") Long libId);
+    void add(@Param("MIVO") MemberInsertVO mvo, @Param("libId") Long libId);
 
     LibMember selectMemberById(@Param("id") Long id);
 

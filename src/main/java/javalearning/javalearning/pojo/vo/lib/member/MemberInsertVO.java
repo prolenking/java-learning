@@ -8,10 +8,12 @@ public class MemberInsertVO extends LibMember {
     @NotNull(message = "libId can't be null")
     private Long libId;
 
+    @Override
     public Long getLibId() {
         return libId;
     }
 
+    @Override
     public void setLibId(Long libId) {
         this.libId = libId;
     }

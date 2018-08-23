@@ -1,8 +1,6 @@
 package javalearning.javalearning.Test;
 
-import javalearning.javalearning.mapper.BookMapper;
 import javalearning.javalearning.pojo.vo.lib.book.BookInsertVO;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.util.Date;
@@ -18,8 +16,6 @@ import java.util.Date;
  * */
 
 public class Test {
-    @Autowired
-    private BookMapper bookMapper;
 
     public static void main(String[] args) throws IOException {
         System.out.println("hello，welcome to our Testing project, Mr.Zhou!");

@@ -17,13 +17,6 @@
         <result column="updateBy" property="updateBy"/>
     </resultMap>
 
-    <insert id="add">
-        insert into lib_Book(`name`,`author`,`isbn`,`place_of_publication`,`publication_date`,`press`,`libId`,
-        `createTime`,`createBy`,`updateTime`,`updateBy`)
-        values (concat(#{BIVO.name}),#{BIVO.author},#{BIVO.isbn},#{BIVO.placeOfPublication},#{BIVO.publicationDate},#{BIVO.press},#{libId},#{BIVO.createTime},#{BIVO.createBy},
-        #{BIVO.updateTime},#{BIVO.updateBy})
-    </insert>
-
     <select id="selectBookById" parameterType="java.lang.Long" resultMap="book">
         select * from lib_Book where id = #{id}
     </select>

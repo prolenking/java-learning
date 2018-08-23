@@ -13,5 +13,5 @@ import javalearning.javalearning.pojo.vo.lib.book.BookInsertVO;
  */
 public interface LibBookService {
     LibBookVO query(LibBookQueryVO libBookQueryVO, Long userId);
-    Boolean add(BookInsertVO bookInsertVO, Long userId);
+    Integer add(BookInsertVO bookInsertVO, Long userId);
 }

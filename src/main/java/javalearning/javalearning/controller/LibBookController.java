@@ -28,7 +28,7 @@ public class LibBookController {
     }
 
     @PostMapping("/add")
-    public Boolean add(@Validated @RequestBody BookInsertVO bookInsertVO){
+    public Integer add(@Validated @RequestBody BookInsertVO bookInsertVO){
         return libBookService.add(bookInsertVO,bookInsertVO.getLibId());
     }
 

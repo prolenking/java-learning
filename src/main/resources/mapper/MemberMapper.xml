@@ -7,6 +7,16 @@
         insert into lib_member (name, phoneNumber, identificationNumber, bookNumber, borrowTimes, createTime, createBy, updateTime, updateBy, libId)
         values (#{MIVO.name}, #{MIVO.phoneNumber}, #{MIVO.identificationNumber}, #{MIVO.bookNumber}, #{MIVO.borrowTimes}, #{MIVO.createTime}, #{MIVO.createBy}, #{MIVO.updateTime}, #{MIVO.updateBy}, #{libId})
     </insert>
+    <update id="update">
+        update lib_member
+        set name = #{LMVO.name}, phoneNumber = #{LMVO.phoneNumber}, identificationNumber = #{LMVO.identificationNumber}
+        where id = #{LMVO.id}
+    </update>
+    <update id="logicDelete">
+        update lib_member
+        set deleted = 1
+        where id = #{id}
+    </update>
     <select id="selectMemberById" resultType="javalearning.javalearning.entity.LibMember">
         select * from lib_member where id = #{id}
     </select>

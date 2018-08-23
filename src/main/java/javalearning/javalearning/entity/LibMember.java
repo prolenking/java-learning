@@ -2,6 +2,13 @@ package javalearning.javalearning.entity;
 
 import javalearning.javalearning.common.base.BaseEntity;
 
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @Author: zhouzhiwei
+ * @Date: 2018/8/21
+ * @Time: 10:03
+ */
 public class LibMember extends BaseEntity {
     private Long id;
     private String name;
@@ -65,5 +72,17 @@ public class LibMember extends BaseEntity {
 
     public void setBorrowTimes(Integer borrowTimes) {
         this.borrowTimes = borrowTimes;
+    }
+
+    @Override
+    public String toString() {
+        return "LibMember{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", identificationNumber='" + identificationNumber + '\'' +
+                ", bookNumber=" + bookNumber +
+                ", borrowTimes=" + borrowTimes +
+                '}';
     }
 }

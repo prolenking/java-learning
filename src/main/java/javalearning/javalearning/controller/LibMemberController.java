@@ -8,6 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @Author: zhouzhiwei
+ * @Date: 2018/8/21
+ * @Time: 10:03
+ */
 @RestController
 @RequestMapping("/libmember")
 public class LibMemberController {
@@ -22,5 +29,15 @@ public class LibMemberController {
     @PostMapping("/add")
     public Boolean add(@Validated @RequestBody MemberInsertVO vo) {
         return service.add(vo, vo.getLibId());
+    }
+
+    @PostMapping("/update")
+    public Boolean update(@Validated @RequestBody LibMemberVO libMemberVO) {
+        return service.update(libMemberVO);
+    }
+
+    @GetMapping("/delete")
+    public Boolean delete(@Validated Long id) {
+        return service.delete(id);
     }
 }

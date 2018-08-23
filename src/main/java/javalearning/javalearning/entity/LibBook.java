@@ -1,6 +1,5 @@
 package javalearning.javalearning.entity;
 
-import com.baomidou.mybatisplus.annotations.TableField;
 import javalearning.javalearning.common.base.BaseEntity;
 
 import java.util.Date;

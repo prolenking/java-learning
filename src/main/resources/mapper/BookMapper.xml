@@ -28,10 +28,6 @@
         select * from lib_Book where id = #{id}
     </select>
 
-    <select id="se" resultType="javalearning.javalearning.entity.LibBook">
-        select `name` from lib_Book where id = 9;
-    </select>
-
     <select id="query" resultType="javalearning.javalearning.pojo.vo.lib.book.LibBookVO">
         select id,`name`,`author`,`isbn`,`press`,`libId`
         from lib_Book

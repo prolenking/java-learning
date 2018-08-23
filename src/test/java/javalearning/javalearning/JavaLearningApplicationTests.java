@@ -23,7 +23,7 @@ public class JavaLearningApplicationTests {
 
     @Test
     public void test(){
-        System.out.println(bookMapper.se());
+
     }
 
 }

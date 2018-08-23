@@ -19,5 +19,4 @@ public interface BookMapper {
     LibBook selectBookById(@Param("id") Long id);
     LibBookVO query(@Param("LBQVO") LibBookQueryVO libBookQueryVO, @Param("libId") Long libId);
     void add(@Param("BIVO") BookInsertVO bookInsertVO,@Param("libId") Long libId);
-    LibBook se();
 }

@@ -8,6 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @Author: zhouzhiwei
+ * @Date: 2018/8/21
+ * @Time: 10:03
+ */
 @RestController
 @RequestMapping("/libmember")
 public class LibMemberController {

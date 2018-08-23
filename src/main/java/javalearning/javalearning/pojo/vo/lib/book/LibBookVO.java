@@ -10,5 +10,9 @@ import javalearning.javalearning.entity.LibBook;
  * @Time: 10:03
  */
 public class LibBookVO extends LibBook {
-
+    @Override
+    public String toString() {
+        super.toString();
+        return "LibBookVO{}";
+    }
 }

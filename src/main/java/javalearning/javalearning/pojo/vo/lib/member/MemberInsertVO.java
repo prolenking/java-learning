@@ -4,6 +4,13 @@ import javalearning.javalearning.entity.LibMember;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @Author: zhouzhiwei
+ * @Date: 2018/8/21
+ * @Time: 10:03
+ */
 public class MemberInsertVO extends LibMember {
     @NotNull(message = "libId can't be null")
     private Long libId;

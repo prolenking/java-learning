@@ -8,6 +8,13 @@ import javalearning.javalearning.pojo.vo.lib.member.MemberInsertVO;
 import javalearning.javalearning.service.LibMemberService;
 import org.springframework.stereotype.Service;
 
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @Author: zhouzhiwei
+ * @Date: 2018/8/21
+ * @Time: 10:03
+ */
 @Service
 public class LibMemberServiceImpl extends BaseServiceImpl<MemberMapper> implements LibMemberService {
 

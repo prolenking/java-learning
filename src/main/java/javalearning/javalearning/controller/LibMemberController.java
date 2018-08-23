@@ -30,4 +30,9 @@ public class LibMemberController {
     public Boolean add(@Validated @RequestBody MemberInsertVO vo) {
         return service.add(vo, vo.getLibId());
     }
+
+    @PostMapping("/update")
+    public Boolean update(@Validated @RequestBody LibMemberVO libMemberVO) {
+        return service.update(libMemberVO);
+    }
 }

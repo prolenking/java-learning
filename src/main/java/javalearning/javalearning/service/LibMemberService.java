@@ -15,6 +15,7 @@ public interface LibMemberService {
 
     /**
      * 新增用户方法
+     *
      * @param memberInsertVO
      * @param libId
      * @return
@@ -23,9 +24,18 @@ public interface LibMemberService {
 
     /**
      * 模糊查询
+     *
      * @param libMemberQueryVO
      * @param libId
      * @return
      */
     LibMemberVO query(LibMemberQueryVO libMemberQueryVO, Long libId);
+
+    /**
+     * 修改用户信息方法
+     *
+     * @param libMemberVO
+     * @return
+     */
+    Boolean update(LibMemberVO libMemberVO);
 }

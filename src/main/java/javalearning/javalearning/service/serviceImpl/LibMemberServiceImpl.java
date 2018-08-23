@@ -29,4 +29,10 @@ public class LibMemberServiceImpl extends BaseServiceImpl<MemberMapper> implemen
     public LibMemberVO query(LibMemberQueryVO libMemberQueryVO, Long libId) {
         return this.baseMapper.query(libMemberQueryVO, libId);
     }
+
+    @Override
+    public Boolean update(LibMemberVO libMemberVO) {
+        this.baseMapper.update(libMemberVO);
+        return true;
+    }
 }

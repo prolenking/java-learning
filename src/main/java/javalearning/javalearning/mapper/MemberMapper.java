@@ -40,4 +40,11 @@ public interface MemberMapper {
      * @return
      */
     LibMemberVO query(@Param("LMQVO") LibMemberQueryVO libMemberQueryVO, @Param("libId") Long id);
+
+    /**
+     * 修改用户信息
+     *
+     * @param libMemberVO
+     */
+    void update(@Param("LMVO") LibMemberVO libMemberVO);
 }

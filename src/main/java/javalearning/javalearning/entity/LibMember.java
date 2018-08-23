@@ -73,4 +73,16 @@ public class LibMember extends BaseEntity {
     public void setBorrowTimes(Integer borrowTimes) {
         this.borrowTimes = borrowTimes;
     }
+
+    @Override
+    public String toString() {
+        return "LibMember{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", identificationNumber='" + identificationNumber + '\'' +
+                ", bookNumber=" + bookNumber +
+                ", borrowTimes=" + borrowTimes +
+                '}';
+    }
 }

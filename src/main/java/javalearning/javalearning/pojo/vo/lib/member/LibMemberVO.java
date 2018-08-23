@@ -12,7 +12,6 @@ import javalearning.javalearning.entity.LibMember;
 public class LibMemberVO extends LibMember {
     @Override
     public String toString() {
-        super.toString();
-        return "LibMemberVO{}";
+        return "LibMemberVO{}" + super.toString();
     }
 }

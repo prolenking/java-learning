@@ -1,5 +1,6 @@
 package javalearning.javalearning.entity;
 
+import com.baomidou.mybatisplus.annotations.TableField;
 import javalearning.javalearning.common.base.BaseEntity;
 
 import java.util.Date;
@@ -11,12 +12,9 @@ import java.util.Date;
  * @Date: 2018/8/7
  * @Time: 16:43
  */
-public class LibBook extends BaseEntity {
+public class LibBook extends BaseEntity<LibBook> {
 
-    /**
-     * id
-     */
-    private Long id;
+
 
     /**
      * 书籍名称
@@ -36,25 +34,19 @@ public class LibBook extends BaseEntity {
     /**
      * 出版地
      */
+
     private String placeOfPublication;
 
     /**
      * 出版日期
      */
+
     private Date publicationDate;
 
     /**
      * 出版社
      */
     private String press;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -107,8 +99,7 @@ public class LibBook extends BaseEntity {
     @Override
     public String toString() {
         return "LibBook{" +
-                "id=" + id +
-                ", \nname='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", \nauthor='" + author + '\'' +
                 ", \nisbn='" + isbn + '\'' +
                 ", \nplaceOfPublication='" + placeOfPublication + '\'' +

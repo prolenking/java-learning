@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="javalearning.javalearning.mapper.MemberMapper">
+    <insert id="insert">
+        insert into lib_member (name, phoneNumber, identificationNumber, bookNumber, borrowTimes, createTime, createBy, updateTime, updateBy, libId)
+        values (#{MIVO.name}, #{MIVO.phoneNumber}, #{MIVO.identificationNumber}, #{MIVO.bookNumber}, #{MIVO.borrowTimes}, #{MIVO.createTime}, #{MIVO.createBy}, #{MIVO.updateTime}, #{MIVO.updateBy}, #{libId})
+    </insert>
+    <select id="selectMemberById" resultType="javalearning.javalearning.entity.LibMember">
+        select * from lib_member where id = #{id}
+    </select>
+    <select id="query" resultType="javalearning.javalearning.pojo.vo.lib.member.LibMemberVO">
+        select name, phoneNumber, identificationNumber, bookNumber, borrowTimes
+        from lib_member
+        where libId = #{libId}
+        <if test="LMQVO.keywords != null">
+            and (`name` like concat('%',#{LMQVO.keywords},'%')
+            or `phoneNumber` like concat('%',#{LMQVO.keywords},'%')
+            or `identificationNumber` like concat('%',#{LMQVO.keywords},'%'))
+        </if>
+    </select>
+</mapper>

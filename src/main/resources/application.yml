@@ -6,9 +6,9 @@ spring:
     store-type: none
   datasource:
     name: test
-    url: jdbc:mysql://127.0.0.1:3306/bookdb?useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/bookdb?useSSL=false&serverTimezone=UTC
     username: root
-    password: 123456
+    password: admin
     driver-class-name: com.mysql.jdbc.Driver
 
 

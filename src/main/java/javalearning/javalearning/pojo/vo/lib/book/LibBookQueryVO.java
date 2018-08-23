@@ -11,6 +11,4 @@ import javalearning.javalearning.pojo.vo.lib.FuzzyQueryVO;
  */
 public class LibBookQueryVO extends FuzzyQueryVO {
 
-
-
 }

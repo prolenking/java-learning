@@ -18,20 +18,16 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class LibBookServiceImpl extends BaseServiceImpl<BookMapper> implements LibBookService {
-    @Autowired
-    private BookMapper bookMapper;
-
-
 
     @Override
     public LibBookVO query(LibBookQueryVO libBookQueryVO, Long userId) {
-        return bookMapper.query(libBookQueryVO, userId);
+        return this.baseMapper.query(libBookQueryVO, userId);
     }
 
     @Override
     public Boolean add(BookInsertVO bookInsertVO, Long userId) {
         this.addInsertCommonField(bookInsertVO, userId);
-        bookMapper.add(bookInsertVO, userId);
+        this.baseMapper.add(bookInsertVO, userId);
         return true;
     }
 

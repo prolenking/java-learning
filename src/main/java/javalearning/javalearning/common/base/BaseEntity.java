@@ -1,5 +1,10 @@
 package javalearning.javalearning.common.base;
 
+import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -10,33 +15,56 @@ import java.util.Date;
  * @Date: 2018/8/8
  * @Time: 14:35
  */
-public class BaseEntity implements Serializable {
+public abstract class BaseEntity<T extends Model> extends Model<T> implements Serializable {
 
+
+    /**
+     * id
+     */
+    @TableId(value = "id",type = IdType.AUTO)
+    private Long id;
     /**
      * 创建时间
      */
+    @TableField("createTime")
     private Date createTime;
     /**
      * 创建人
      */
+    @TableField("createBy")
     private Long createBy;
     /**
      * 更新时间
      */
+    @TableField("updateTime")
     private Date updateTime;
     /**
      * 更新人
      */
+    @TableField("updateBy")
     private Long updateBy;
     /**
      * 图书馆id
      */
+    @TableField("libId")
     private Long libId;
     /**
      * 是否被删除
      */
     private Boolean deleted;
 
+    @Override
+    protected Serializable pkVal() {
+        return this.id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Date getCreateTime() {
         return createTime;

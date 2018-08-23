@@ -14,11 +14,9 @@ spring:
 
 
 
-### mybatis暂时雪藏
-mybatis:
-  mapper-locations: classpath:mapper/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
-  type-aliases-package: com.javalearning.entity  # 注意：对应实体类的路径
-
-
 mybatis-plus:
-  mapper
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: com.javalearning.entity
+  global-config:
+    refresh-mapper: true
+  

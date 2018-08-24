@@ -17,5 +17,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public interface BookMapper extends BaseMapper<LibBook> {
     LibBook selectBookById(@Param("id") Long id);
+
     LibBookVO query(@Param("LBQVO") LibBookQueryVO libBookQueryVO, @Param("libId") Long libId);
+
+    /**
+     * 通过用户ID查询用户借阅图书
+     *
+     * @param memberId
+     * @return
+     */
+    LibBook selectByMemberId(@Param("memberId") Long memberId);
 }

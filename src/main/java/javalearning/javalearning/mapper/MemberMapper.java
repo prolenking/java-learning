@@ -47,4 +47,6 @@ public interface MemberMapper extends BaseMapper<LibMember> {
      * @param id
      */
     void logicDelete(@Param("id") Long id);
+
+    LibMemberVO queryForDetails(@Param("id") Long id);
 }

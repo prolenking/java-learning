@@ -43,4 +43,9 @@ public class LibMemberServiceImpl extends BaseServiceImpl<MemberMapper> implemen
         this.baseMapper.logicDelete(id);
         return true;
     }
+
+    @Override
+    public LibMemberVO queryMemberDetails(Long id) {
+        return this.baseMapper.queryForDetails(id);
+    }
 }

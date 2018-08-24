@@ -33,4 +33,10 @@
         </if>
     </select>
 
+    <select id="selectByMemberId" resultMap="book">
+        select b.name, b.author, b.isbn, b.place_of_publication
+        from lib_book b join lib_record r
+        on b.id = r.bookId
+        where r.memberId = #{memberId}
+    </select>
 </mapper>

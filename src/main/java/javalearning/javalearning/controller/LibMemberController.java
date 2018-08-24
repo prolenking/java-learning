@@ -42,4 +42,9 @@ public class LibMemberController {
     public Boolean delete(@Validated Long id) {
         return service.delete(id);
     }
+
+    @GetMapping("/details")
+    public LibMemberVO queryMemberDetails(@Validated Long id) {
+        return service.queryMemberDetails(id);
+    }
 }

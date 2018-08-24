@@ -48,4 +48,12 @@ public interface LibMemberService {
      * @return
      */
     Boolean delete(Long id);
+
+    /**
+     * 查询用户详细信息，包括用户的基本信息和所借图书信息
+     *
+     * @param id
+     * @return
+     */
+    LibMemberVO queryMemberDetails(Long id);
 }

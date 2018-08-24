@@ -13,7 +13,7 @@
         set deleted = 1
         where id = #{id}
     </update>
-    <select id="selectMemberById" resultType="LibMember">
+    <select id="selectMemberById" resultType="javalearning.javalearning.entity.LibMember">
         select * from lib_member where id = #{id}
     </select>
     <select id="query" resultType="javalearning.javalearning.pojo.vo.lib.member.LibMemberVO">
@@ -25,5 +25,25 @@
             or `phoneNumber` like concat('%',#{LMQVO.keywords},'%')
             or `identificationNumber` like concat('%',#{LMQVO.keywords},'%'))
         </if>
+    </select>
+
+    <resultMap id="MemberDetailsMap" type="javalearning.javalearning.pojo.vo.lib.member.LibMemberVO">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="phoneNumber" property="phoneNumber"/>
+        <result column="identificationNumber" property="identificationNumber"/>
+        <result column="bookNumber" property="bookNumber"/>
+        <result column="borrowTimes" property="borrowTimes"/>
+        <result column="createTime" property="createTime"/>
+        <result column="createBy" property="createBy"/>
+        <result column="updateTime" property="updateTime"/>
+        <result column="updateBy" property="updateBy"/>
+        <result column="libId" property="libId"/>
+        <result column="deleted" property="deleted"/>
+        <collection property="books" ofType="javalearning.javalearning.entity.LibBook"
+                    column="id" select="javalearning.javalearning.mapper.BookMapper.selectByMemberId"/>
+    </resultMap>
+    <select id="queryForDetails" resultMap="MemberDetailsMap">
+        select * from lib_member where id = #{id}
     </select>
 </mapper>

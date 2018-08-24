@@ -34,7 +34,7 @@ public class LibMemberController {
     }
 
     @PostMapping("/update")
-    public Boolean update(@Validated @RequestBody LibMemberVO libMemberVO) {
+    public Integer update(@Validated @RequestBody LibMemberVO libMemberVO) {
         return service.update(libMemberVO);
     }
 

@@ -39,7 +39,7 @@ public interface LibMemberService {
      * @param libMemberVO
      * @return
      */
-    Boolean update(LibMemberVO libMemberVO);
+    Integer update(LibMemberVO libMemberVO);
 
     /**
      * 逻辑删除用户

@@ -16,15 +16,6 @@ import java.util.List;
  * @Time: 10:03
  */
 public interface MemberMapper extends BaseMapper<LibMember> {
-
-    /**
-     * 通过用户id查询用户信息
-     *
-     * @param id
-     * @return
-     */
-    LibMember selectMemberById(@Param("id") Long id);
-
     /**
      * 通过关键字模糊查询用户
      *
@@ -35,18 +26,17 @@ public interface MemberMapper extends BaseMapper<LibMember> {
     List<LibMemberVO> query(@Param("LMQVO") LibMemberQueryVO libMemberQueryVO, @Param("libId") Long id);
 
     /**
-     * 修改用户信息
-     *
-     * @param libMemberVO
-     */
-    void update(@Param("LMVO") LibMemberVO libMemberVO);
-
-    /**
      * 逻辑删除用户:将deleted字段设置为true，不删除记录
      *
      * @param id
      */
     void logicDelete(@Param("id") Long id);
 
+    /**
+     * 通过用户id查询用户详情，包括用户基本信息和在借图书信息
+     *
+     * @param id
+     * @return
+     */
     LibMemberVO queryForDetails(@Param("id") Long id);
 }

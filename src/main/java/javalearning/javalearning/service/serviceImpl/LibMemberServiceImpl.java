@@ -33,9 +33,8 @@ public class LibMemberServiceImpl extends BaseServiceImpl<MemberMapper> implemen
     }
 
     @Override
-    public Boolean update(LibMemberVO libMemberVO) {
-        this.baseMapper.update(libMemberVO);
-        return true;
+    public Integer update(LibMemberVO libMemberVO) {
+        return this.baseMapper.updateById(libMemberVO);
     }
 
     @Override

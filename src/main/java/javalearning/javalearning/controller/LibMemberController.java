@@ -33,18 +33,18 @@ public class LibMemberController {
         return service.add(vo, vo.getLibId());
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     public Integer update(@Validated @RequestBody LibMemberVO libMemberVO) {
         return service.update(libMemberVO);
     }
 
-    @GetMapping("/delete")
-    public Boolean delete(@Validated Long id) {
+    @PutMapping("/delete/{id}")
+    public Boolean delete(@PathVariable("id") Long id) {
         return service.delete(id);
     }
 
-    @GetMapping("/details")
-    public LibMemberVO queryMemberDetails(@Validated Long id) {
+    @GetMapping("/details/{id}")
+    public LibMemberVO queryMemberDetails(@PathVariable(value = "id") Long id) {
         return service.queryMemberDetails(id);
     }
 }

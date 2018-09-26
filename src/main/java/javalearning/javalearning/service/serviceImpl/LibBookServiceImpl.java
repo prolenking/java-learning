@@ -2,10 +2,7 @@ package javalearning.javalearning.service.serviceImpl;
 
 import javalearning.javalearning.common.base.BaseServiceImpl;
 import javalearning.javalearning.mapper.BookMapper;
-import javalearning.javalearning.pojo.vo.lib.book.BookInsertVO;
-import javalearning.javalearning.pojo.vo.lib.book.BookUpdateVO;
-import javalearning.javalearning.pojo.vo.lib.book.LibBookQueryVO;
-import javalearning.javalearning.pojo.vo.lib.book.LibBookVO;
+import javalearning.javalearning.pojo.vo.lib.book.*;
 import javalearning.javalearning.service.LibBookService;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +31,11 @@ public class LibBookServiceImpl extends BaseServiceImpl<BookMapper> implements L
     public Integer update(BookUpdateVO bookUpdateVO, Long userId) {
         this.addUpdateCommonField(bookUpdateVO,userId);
         return this.baseMapper.updateById(bookUpdateVO);
+    }
+
+    @Override
+    public BookDetailVO detail(Long id, Long userId) {
+        return this.baseMapper.selectBookById(id);
     }
 
 

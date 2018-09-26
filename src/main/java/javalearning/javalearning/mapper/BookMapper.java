@@ -2,6 +2,7 @@ package javalearning.javalearning.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import javalearning.javalearning.entity.LibBook;
+import javalearning.javalearning.pojo.vo.lib.book.BookDetailVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookQueryVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookVO;
 import org.apache.ibatis.annotations.Param;
@@ -16,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public interface BookMapper extends BaseMapper<LibBook> {
-    LibBook selectBookById(@Param("id") Long id);
+    BookDetailVO selectBookById(@Param("id") Long id);
 
     LibBookVO query(@Param("LBQVO") LibBookQueryVO libBookQueryVO, @Param("libId") Long libId);
 

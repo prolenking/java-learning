@@ -15,7 +15,7 @@ import java.util.Date;
  * @Date: 2018/8/8
  * @Time: 14:35
  */
-public abstract class BaseEntity<T extends Model> extends Model<T> implements Serializable {
+public abstract class  BaseEntity<T extends Model> extends Model<T> implements Serializable {
 
 
     /**

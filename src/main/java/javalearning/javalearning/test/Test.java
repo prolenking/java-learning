@@ -1,4 +1,4 @@
-package javalearning.javalearning.Test;
+package javalearning.javalearning.test;
 
 import javalearning.javalearning.pojo.vo.lib.book.BookInsertVO;
 

@@ -10,5 +10,8 @@ import javalearning.javalearning.pojo.vo.lib.FuzzyQueryVO;
  * @Time: 10:02
  */
 public class LibBookQueryVO extends FuzzyQueryVO {
-
+    @Override
+    public String toString() {
+        return "LibBookQueryVO{}";
+    }
 }

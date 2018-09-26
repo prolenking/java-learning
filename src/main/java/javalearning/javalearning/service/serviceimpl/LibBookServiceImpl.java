@@ -1,4 +1,4 @@
-package javalearning.javalearning.service.serviceImpl;
+package javalearning.javalearning.service.serviceimpl;
 
 import javalearning.javalearning.common.base.BaseServiceImpl;
 import javalearning.javalearning.mapper.BookMapper;

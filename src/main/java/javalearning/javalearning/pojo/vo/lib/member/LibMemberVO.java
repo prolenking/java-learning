@@ -14,7 +14,7 @@ import java.util.List;
  * @Time: 10:03
  */
 public class LibMemberVO extends LibMember {
-    private List<LibBook> books = new ArrayList<>();
+    private List<LibBook> books;
 
     public List<LibBook> getBooks() {
         return books;

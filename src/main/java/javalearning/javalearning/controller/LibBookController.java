@@ -1,6 +1,7 @@
 package javalearning.javalearning.controller;
 
 import javalearning.javalearning.pojo.vo.lib.book.BookInsertVO;
+import javalearning.javalearning.pojo.vo.lib.book.BookUpdateVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookQueryVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookVO;
 import javalearning.javalearning.service.LibBookService;
@@ -30,6 +31,11 @@ public class LibBookController {
     @PostMapping("/add")
     public Integer add(@Validated @RequestBody BookInsertVO bookInsertVO){
         return libBookService.add(bookInsertVO,bookInsertVO.getLibId());
+    }
+
+    @PutMapping("/update")
+    public Integer update(@Validated @RequestBody BookUpdateVO bookUpdateVO){
+        return libBookService.update(bookUpdateVO,1L);
     }
 
 }

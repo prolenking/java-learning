@@ -2,6 +2,8 @@ package javalearning.javalearning.service;
 
 import javalearning.javalearning.pojo.vo.lib.book.*;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -17,7 +19,7 @@ public interface LibBookService {
      * @param userId
      * @return
      */
-    LibBookVO query(LibBookQueryVO libBookQueryVO, Long userId);
+    List<LibBookVO> query(LibBookQueryVO libBookQueryVO, Long userId);
 
     /**
      * 插入图书信息
@@ -26,7 +28,7 @@ public interface LibBookService {
      * @param userId
      * @return
      */
-    Integer add(BookInsertVO bookInsertVO, Long userId);
+    BookInsertVO add(BookInsertVO bookInsertVO, Long userId);
 
     /**
      * 更新图书信息
@@ -35,7 +37,7 @@ public interface LibBookService {
      * @param userId
      * @return
      */
-    Integer update(BookUpdateVO bookUpdateVO, Long userId);
+    BookUpdateVO update(BookUpdateVO bookUpdateVO, Long userId);
 
     /**
      * 图书详情

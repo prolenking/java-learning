@@ -14,11 +14,11 @@ public class LibResponse {
     private Object data;
 
     public LibResponse(Boolean success) {
-        new LibResponse(success,null,null,null);
+        new LibResponse(success, null, null, null);
     }
 
     public LibResponse(Long status, Object data) {
-        new LibResponse(null,status,null,data);
+        new LibResponse(null, status, null, data);
     }
 
     public LibResponse(Boolean success, Long status, String message, Object data) {

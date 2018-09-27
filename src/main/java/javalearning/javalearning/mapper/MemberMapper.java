@@ -39,4 +39,13 @@ public interface MemberMapper extends BaseMapper<LibMember> {
      * @return
      */
     LibMemberVO queryForDetails(@Param("id") Long id);
+
+    /**
+     * 通过图书查询用户信息
+     *
+     * @param bId
+     * @param libId
+     * @return
+     */
+    List<LibMemberVO> selectMemberInfoByBookId(@Param("bId") Long bId, @Param("libId") Long libId);
 }

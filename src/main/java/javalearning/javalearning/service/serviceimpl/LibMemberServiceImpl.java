@@ -47,4 +47,9 @@ public class LibMemberServiceImpl extends BaseServiceImpl<MemberMapper> implemen
     public LibMemberVO queryMemberDetails(Long id) {
         return this.baseMapper.queryForDetails(id);
     }
+
+    @Override
+    public List<LibMemberVO> selectMemberInfoByBookId(Long bId, Long libId) {
+        return this.baseMapper.selectMemberInfoByBookId(bId,libId);
+    }
 }

@@ -17,7 +17,7 @@
         <result column="updateBy" property="updateBy"/>
     </resultMap>
 
-    <select id="selectBookById" parameterType="java.lang.Long" resultMap="book">
+    <select id="selectBookById" parameterType="java.lang.Long" resultType="javalearning.javalearning.pojo.vo.lib.book.BookDetailVO">
         select * from lib_Book where id = #{id}
     </select>
 

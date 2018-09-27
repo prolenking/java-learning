@@ -56,4 +56,6 @@ public interface LibMemberService {
      * @return
      */
     LibMemberVO queryMemberDetails(Long id);
+
+    List<LibMemberVO> selectMemberInfoByBookId(Long bId,Long libId);
 }

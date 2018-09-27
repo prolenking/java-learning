@@ -25,8 +25,6 @@
         <result column="name" property="name"/>
         <result column="phoneNumber" property="phoneNumber"/>
         <result column="identificationNumber" property="identificationNumber"/>
-        <result column="bookNumber" property="bookNumber"/>
-        <result column="borrowTimes" property="borrowTimes"/>
         <result column="createTime" property="createTime"/>
         <result column="createBy" property="createBy"/>
         <result column="updateTime" property="updateTime"/>
@@ -38,5 +36,13 @@
     </resultMap>
     <select id="queryForDetails" resultMap="MemberDetailsMap">
         select * from lib_member where id = #{id}
+    </select>
+    <select id="selectMemberInfoByBookId"
+            resultType="javalearning.javalearning.pojo.vo.lib.member.LibMemberVO">
+        select *
+        from lib_Member m
+        join lib_Record r on r.memberId = m.id and r.deleted = 0
+        join lib_Book b on r.bookId = b.id and b.id = #{bId}
+        where m.libId = #{libId} and m.deleted = 0
     </select>
 </mapper>

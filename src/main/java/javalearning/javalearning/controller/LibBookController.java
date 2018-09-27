@@ -38,4 +38,8 @@ public class LibBookController {
         return new LibResponse(true).setData(libBookService.update(bookUpdateVO,1L));
     }
 
+    @GetMapping("/detail/{id}")
+    public LibResponse detail(@PathVariable Long id){
+        return new LibResponse(true).setData(libBookService.bookMemberDetail(id,1L));
+    }
 }

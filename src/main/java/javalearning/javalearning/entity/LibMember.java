@@ -19,16 +19,6 @@ public class LibMember extends BaseEntity {
      */
     @TableField("identificationNumber")
     private String identificationNumber;
-    /**
-     * 已借走书的数量
-     */
-    @TableField("bookNumber")
-    private Integer bookNumber;
-    /**
-     * 借阅次数
-     */
-    @TableField("borrowTimes")
-    private Integer borrowTimes;
 
     public String getName() {
         return name;
@@ -54,22 +44,6 @@ public class LibMember extends BaseEntity {
         this.identificationNumber = identificationNumber;
     }
 
-    public Integer getBookNumber() {
-        return bookNumber;
-    }
-
-    public void setBookNumber(Integer bookNumber) {
-        this.bookNumber = bookNumber;
-    }
-
-    public Integer getBorrowTimes() {
-        return borrowTimes;
-    }
-
-    public void setBorrowTimes(Integer borrowTimes) {
-        this.borrowTimes = borrowTimes;
-    }
-
     @Override
     public String toString() {
         return "LibMember{" +
@@ -77,8 +51,6 @@ public class LibMember extends BaseEntity {
                 ", name='" + name + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", identificationNumber='" + identificationNumber + '\'' +
-                ", bookNumber=" + bookNumber +
-                ", borrowTimes=" + borrowTimes +
                 '}';
     }
 }

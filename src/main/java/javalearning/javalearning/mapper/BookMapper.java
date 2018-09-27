@@ -7,6 +7,8 @@ import javalearning.javalearning.pojo.vo.lib.book.LibBookQueryVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookVO;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -19,7 +21,7 @@ public interface BookMapper extends BaseMapper<LibBook> {
      * 通过图书id获得详情
      *
      * @param id
-     * @return
+     * @return BookDetailVO
      */
     BookDetailVO selectBookById(@Param("id") Long id);
 
@@ -30,7 +32,7 @@ public interface BookMapper extends BaseMapper<LibBook> {
      * @param libId
      * @return
      */
-    LibBookVO query(@Param("LBQVO") LibBookQueryVO libBookQueryVO, @Param("libId") Long libId);
+    List<LibBookVO> query(@Param("LBQVO") LibBookQueryVO libBookQueryVO, @Param("libId") Long libId);
 
     /**
      * 通过用户ID查询用户借阅图书

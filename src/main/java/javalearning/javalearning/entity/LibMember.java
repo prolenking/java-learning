@@ -30,16 +30,6 @@ public class LibMember extends BaseEntity {
     @TableField("borrowTimes")
     private Integer borrowTimes;
 
-    @Override
-    public Long getId() {
-        return super.getId();
-    }
-
-    @Override
-    public void setId(Long id) {
-        super.setId(id);
-    }
-
     public String getName() {
         return name;
     }

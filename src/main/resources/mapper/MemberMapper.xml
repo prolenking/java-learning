@@ -8,6 +8,7 @@
         set deleted = 1
         where id = #{id}
     </update>
+
     <select id="query" resultType="javalearning.javalearning.pojo.vo.lib.member.LibMemberVO">
         select name, phoneNumber, identificationNumber, bookNumber, borrowTimes
         from lib_member

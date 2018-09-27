@@ -56,8 +56,9 @@ public class LibResponse {
         return data;
     }
 
-    public void setData(Object data) {
+    public LibResponse setData(Object data) {
         this.data = data;
+        return this;
     }
 
     @Override

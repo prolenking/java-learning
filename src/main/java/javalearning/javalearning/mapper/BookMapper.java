@@ -6,7 +6,6 @@ import javalearning.javalearning.pojo.vo.lib.book.BookDetailVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookQueryVO;
 import javalearning.javalearning.pojo.vo.lib.book.LibBookVO;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,7 +14,6 @@ import org.springframework.context.annotation.Configuration;
  * @Date: 2018/8/7
  * @Time: 17:02
  */
-@Configuration
 public interface BookMapper extends BaseMapper<LibBook> {
     /**
      * 通过图书id获得详情

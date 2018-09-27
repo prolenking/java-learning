@@ -1,4 +1,4 @@
-package javalearning.javalearning.pojo.vo.lib;
+package javalearning.javalearning.pojo.vo;
 
 import org.hibernate.validator.constraints.Length;
 

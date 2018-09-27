@@ -1,6 +1,6 @@
 package javalearning.javalearning.pojo.vo.lib.member;
 
-import javalearning.javalearning.pojo.vo.lib.FuzzyQueryVO;
+import javalearning.javalearning.pojo.vo.FuzzyQueryVO;
 
 /**
  * Created with IntelliJ IDEA.

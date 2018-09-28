@@ -13,15 +13,19 @@ public class LibResponse {
     private String message;
     private Object data;
 
-    public LibResponse(Boolean success) {
-        new LibResponse(success, null, null, null);
+    public static LibResponse create(Boolean success) {
+        return create(success,null,null,null);
     }
 
-    public LibResponse(Long status, Object data) {
-        new LibResponse(null, status, null, data);
+    public static LibResponse create(Long status, Object data) {
+        return create(null, status, null, data);
     }
 
-    public LibResponse(Boolean success, Long status, String message, Object data) {
+    public static LibResponse create(Boolean success, Long status, String message, Object data){
+        return new LibResponse(success,status,message,data);
+    }
+
+    private LibResponse(Boolean success, Long status, String message, Object data) {
         this.success = success;
         this.status = status;
         this.message = message;

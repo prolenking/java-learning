@@ -38,8 +38,14 @@
         select * from lib_member where id = #{id}
     </select>
     <select id="selectMemberInfoByBookId"
-            resultType="javalearning.javalearning.pojo.vo.lib.member.LibMemberVO">
-        select *
+            resultType="javalearning.javalearning.pojo.vo.lib.member.LibBookMemberDetailVO">
+        select m.id,
+        m.`name`,
+        m.phoneNumber,
+        m.identificationNumber,
+        r.returned,
+        r.createTime as borrowTime,
+        r.updateTime as returnTime
         from lib_Member m
         join lib_Record r on r.memberId = m.id and r.deleted = 0
         join lib_Book b on r.bookId = b.id and b.id = #{bId}

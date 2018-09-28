@@ -25,21 +25,26 @@ public class LibBookController {
 
     @GetMapping("/query")
     public LibResponse query(@Validated LibBookQueryVO libBookQueryVO){
-        return new LibResponse(true).setData(libBookService.query(libBookQueryVO,1L));
+        return LibResponse.create(true).setData(libBookService.query(libBookQueryVO,1L));
     }
 
     @PostMapping("/add")
     public LibResponse add(@Validated @RequestBody BookInsertVO bookInsertVO){
-        return new LibResponse(true).setData(libBookService.add(bookInsertVO,bookInsertVO.getLibId()));
+        return LibResponse.create(true).setData(libBookService.add(bookInsertVO,bookInsertVO.getLibId()));
     }
 
     @PutMapping("/update")
     public LibResponse update(@Validated @RequestBody BookUpdateVO bookUpdateVO){
-        return new LibResponse(true).setData(libBookService.update(bookUpdateVO,1L));
+        return LibResponse.create(true).setData(libBookService.update(bookUpdateVO,1L));
     }
 
     @GetMapping("/detail/{id}")
     public LibResponse detail(@PathVariable Long id){
-        return new LibResponse(true).setData(libBookService.bookMemberDetail(id,1L));
+        return LibResponse.create(true).setData(libBookService.bookMemberDetail(id,1L));
+    }
+
+    @PutMapping("/delete/{id}")
+    public LibResponse delete(@PathVariable Long id){
+         return LibResponse.create(libBookService.delete(id,1L));
     }
 }

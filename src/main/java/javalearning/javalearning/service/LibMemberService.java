@@ -1,5 +1,6 @@
 package javalearning.javalearning.service;
 
+import javalearning.javalearning.pojo.vo.lib.member.LibBookMemberDetailVO;
 import javalearning.javalearning.pojo.vo.lib.member.LibMemberQueryVO;
 import javalearning.javalearning.pojo.vo.lib.member.LibMemberVO;
 import javalearning.javalearning.pojo.vo.lib.member.MemberInsertVO;
@@ -57,5 +58,12 @@ public interface LibMemberService {
      */
     LibMemberVO queryMemberDetails(Long id);
 
-    List<LibMemberVO> selectMemberInfoByBookId(Long bId,Long libId);
+    /**
+     * 搜索借过对应书的用户信息
+     *
+     * @param bId
+     * @param libId
+     * @return
+     */
+    List<LibBookMemberDetailVO> selectMemberInfoByBookId(Long bId, Long libId);
 }

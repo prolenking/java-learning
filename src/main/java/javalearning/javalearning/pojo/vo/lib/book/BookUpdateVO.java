@@ -41,8 +41,9 @@ public class BookUpdateVO extends LibBook {
 
     @Override
     public String toString() {
-        return "BookInsertVO{" +
-                "libId=" + libId +
+        return "BookUpdateVO{" +
+                "id=" + id +
+                ", libId=" + libId +
                 '}';
     }
 

@@ -2,6 +2,7 @@ package javalearning.javalearning.service.serviceimpl;
 
 import javalearning.javalearning.common.base.BaseServiceImpl;
 import javalearning.javalearning.mapper.MemberMapper;
+import javalearning.javalearning.pojo.vo.lib.member.LibBookMemberDetailVO;
 import javalearning.javalearning.pojo.vo.lib.member.LibMemberQueryVO;
 import javalearning.javalearning.pojo.vo.lib.member.LibMemberVO;
 import javalearning.javalearning.pojo.vo.lib.member.MemberInsertVO;
@@ -49,7 +50,7 @@ public class LibMemberServiceImpl extends BaseServiceImpl<MemberMapper> implemen
     }
 
     @Override
-    public List<LibMemberVO> selectMemberInfoByBookId(Long bId, Long libId) {
-        return this.baseMapper.selectMemberInfoByBookId(bId,libId);
+    public List<LibBookMemberDetailVO> selectMemberInfoByBookId(Long bId, Long libId) {
+        return this.baseMapper.selectMemberInfoByBookId(bId, libId);
     }
 }

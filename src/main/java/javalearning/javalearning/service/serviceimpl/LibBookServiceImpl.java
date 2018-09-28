@@ -3,7 +3,7 @@ package javalearning.javalearning.service.serviceimpl;
 import javalearning.javalearning.common.base.BaseServiceImpl;
 import javalearning.javalearning.mapper.BookMapper;
 import javalearning.javalearning.pojo.vo.lib.book.*;
-import javalearning.javalearning.pojo.vo.lib.member.LibMemberVO;
+import javalearning.javalearning.pojo.vo.lib.member.LibBookMemberDetailVO;
 import javalearning.javalearning.service.LibBookService;
 import javalearning.javalearning.service.LibMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,10 +51,19 @@ public class LibBookServiceImpl extends BaseServiceImpl<BookMapper> implements L
     @Override
     public LibBookDetailVO bookMemberDetail(Long id, Long userId) {
         LibBookDetailVO libBookDetailVO = new LibBookDetailVO();
-        libBookDetailVO.setBookInfo(detail(id,userId));
-        List<LibMemberVO> memberInfo = libMemberService.selectMemberInfoByBookId(libBookDetailVO.getBookInfo().getId(),libBookDetailVO.getBookInfo().getLibId());
+        libBookDetailVO.setBookInfo(detail(id, userId));
+        List<LibBookMemberDetailVO> memberInfo = libMemberService.selectMemberInfoByBookId(libBookDetailVO.getBookInfo().getId(), libBookDetailVO.getBookInfo().getLibId());
         libBookDetailVO.setMemberInfo(memberInfo);
         return libBookDetailVO;
+    }
+
+    @Override
+    public Boolean delete(Long id, Long userId) {
+        BookUpdateVO bookUpdateVO = new BookUpdateVO();
+        bookUpdateVO.setId(id);
+        this.addDeleteCommonField(bookUpdateVO,userId);
+
+        return this.baseMapper.updateById(bookUpdateVO)==1?true:false;
     }
 
 

@@ -1,6 +1,6 @@
 package javalearning.javalearning.pojo.vo.lib.book;
 
-import javalearning.javalearning.pojo.vo.lib.member.LibMemberVO;
+import javalearning.javalearning.pojo.vo.lib.member.LibBookMemberDetailVO;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class LibBookDetailVO {
     private BookDetailVO bookInfo;
-    private List<LibMemberVO> memberInfo;
+    private List<LibBookMemberDetailVO> memberInfo;
 
     public BookDetailVO getBookInfo() {
         return bookInfo;
@@ -24,11 +24,11 @@ public class LibBookDetailVO {
         this.bookInfo = bookInfo;
     }
 
-    public List<LibMemberVO> getMemberInfo() {
+    public List<LibBookMemberDetailVO> getMemberInfo() {
         return memberInfo;
     }
 
-    public void setMemberInfo(List<LibMemberVO> memberInfo) {
+    public void setMemberInfo(List<LibBookMemberDetailVO> memberInfo) {
         this.memberInfo = memberInfo;
     }
 

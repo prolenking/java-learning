@@ -49,4 +49,13 @@ public interface LibBookService {
     BookDetailVO detail(Long id, Long userId);
 
     LibBookDetailVO bookMemberDetail(Long id,Long userId);
+
+    /**
+     * 图书报废方法
+     *
+     * @param id
+     * @param userId
+     * @return
+     */
+    Boolean delete(Long id,Long userId);
 }

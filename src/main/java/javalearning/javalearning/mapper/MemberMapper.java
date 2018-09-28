@@ -2,6 +2,7 @@ package javalearning.javalearning.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import javalearning.javalearning.entity.LibMember;
+import javalearning.javalearning.pojo.vo.lib.member.LibBookMemberDetailVO;
 import javalearning.javalearning.pojo.vo.lib.member.LibMemberQueryVO;
 import javalearning.javalearning.pojo.vo.lib.member.LibMemberVO;
 import org.apache.ibatis.annotations.Param;
@@ -47,5 +48,5 @@ public interface MemberMapper extends BaseMapper<LibMember> {
      * @param libId
      * @return
      */
-    List<LibMemberVO> selectMemberInfoByBookId(@Param("bId") Long bId, @Param("libId") Long libId);
+    List<LibBookMemberDetailVO> selectMemberInfoByBookId(@Param("bId") Long bId, @Param("libId") Long libId);
 }

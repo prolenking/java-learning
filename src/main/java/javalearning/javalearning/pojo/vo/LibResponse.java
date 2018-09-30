@@ -9,23 +9,23 @@ package javalearning.javalearning.pojo.vo;
  */
 public class LibResponse {
     private Boolean success;
-    private Long status;
+    private int status;
     private String message;
     private Object data;
 
     public static LibResponse create(Boolean success) {
-        return create(success,null,null,null);
+        return create(success,0,null,null);
     }
 
-    public static LibResponse create(Long status, Object data) {
+    public static LibResponse create(int status, Object data) {
         return create(null, status, null, data);
     }
 
-    public static LibResponse create(Boolean success, Long status, String message, Object data){
+    public static LibResponse create(Boolean success, int status, String message, Object data){
         return new LibResponse(success,status,message,data);
     }
 
-    private LibResponse(Boolean success, Long status, String message, Object data) {
+    private LibResponse(Boolean success, int status, String message, Object data) {
         this.success = success;
         this.status = status;
         this.message = message;
@@ -36,24 +36,27 @@ public class LibResponse {
         return success;
     }
 
-    public void setSuccess(Boolean success) {
+    public LibResponse setSuccess(Boolean success) {
         this.success = success;
+        return this;
     }
 
-    public Long getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(Long status) {
+    public LibResponse setStatus(int status) {
         this.status = status;
+        return this;
     }
 
     public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
+    public LibResponse setMessage(String message) {
         this.message = message;
+        return this;
     }
 
     public Object getData() {

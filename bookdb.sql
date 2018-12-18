@@ -36,7 +36,7 @@ CREATE TABLE `lib_Book` (
   `updateTime` datetime DEFAULT NULL COMMENT '更新时间',
   `updateBy` bigint(20) DEFAULT NULL COMMENT '更新馆编号',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Table structure for lib_Member
@@ -57,7 +57,7 @@ CREATE TABLE `lib_Member` (
   `deleted` tinyint(1) unsigned DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `idx_identificationNumber_libId_unique` (`identificationNumber`,`libId`) USING BTREE COMMENT '身份编码-图书馆唯一索引'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for lib_Record
@@ -75,6 +75,6 @@ CREATE TABLE `lib_Record` (
   `updateTime` datetime DEFAULT NULL COMMENT '更新日期',
   `updateBy` bigint(20) DEFAULT NULL COMMENT '更新馆编号',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;
